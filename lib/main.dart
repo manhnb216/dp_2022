@@ -8,6 +8,7 @@ import 'package:dp_2022/design_pattern/creational/singleton.dart';
 import 'package:dp_2022/design_pattern/structural/adapter.dart';
 import 'package:dp_2022/design_pattern/structural/bridge.dart';
 import 'package:dp_2022/design_pattern/structural/composite.dart';
+import 'package:dp_2022/design_pattern/structural/decorator.dart';
 import 'package:dp_2022/my_app.dart';
 import 'package:flutter/material.dart';
 
@@ -91,5 +92,18 @@ void main() {
   FileComponent folder = FileComposite(files);
   folder.showProperty();
   log('Total size: ${folder.totalSize()}');
+  log('----------');
+
+  // 9. Decorator
+  log('MANAGER: ');
+  EmployeeComponent manager =
+      EmployeeFactory.getEmployee(EmployeePosition.manager);
+  manager.getName();
+  manager.doSmt();
+  log('TEAM LEAD: ');
+  EmployeeComponent teamLead =
+      EmployeeFactory.getEmployee(EmployeePosition.teamLead);
+  teamLead.getName();
+  teamLead.doSmt();
   log('----------');
 }
